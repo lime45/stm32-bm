@@ -1,4 +1,0 @@
-/home/cbrowning/src/stm32-bm/examples/template/build/CMakeFiles/rebuild_cache.dir
-/home/cbrowning/src/stm32-bm/examples/template/build/CMakeFiles/edit_cache.dir
-/home/cbrowning/src/stm32-bm/examples/template/build/CMakeFiles/stm32-template.dir
-/home/cbrowning/src/stm32-bm/examples/template/build/CMakeFiles/CMSIS_LD_F031K6.dir
