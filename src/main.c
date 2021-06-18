@@ -3,9 +3,8 @@
 void EXTI0_1_IRQ_handler(void);
 volatile unsigned char led_on;
 
-/* Main program. */
-int main(void) {
-    led_on = 0;
+void initialize_gpiob(void)
+{
 
     RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
 
@@ -19,6 +18,10 @@ int main(void) {
     GPIOB->MODER  &= ~(0x3 << (LED_PIN*2));
     GPIOB->MODER  |=  (0x1 << (LED_PIN*2));
     GPIOB->OTYPER &= ~(1 << LED_PIN);
+}
+
+void setup_interrupts()
+{
 
     // part 5 "bare metal" tutorial: interrupts
     RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
@@ -34,6 +37,16 @@ int main(void) {
     // Enable the NVIC interrupt for EXTI0 and EXTI1 at minimum priority.
     NVIC_SetPriority(EXTI0_1_IRQn, 0x03);
     NVIC_EnableIRQ(EXTI0_1_IRQn);
+}
+
+ /* Main program. */
+int main(void)
+{
+    led_on = 0;
+
+    initialize_gpiob();
+
+    setup_interrupts();
 
     // uint32_t gpiob_input = GPIOB->IDR;
     GPIOB->ODR |= (1 << LED_PIN);
