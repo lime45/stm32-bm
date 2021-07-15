@@ -32,12 +32,9 @@ set(PROJECT_SOURCES
 	src/core.S
 	src/vector_table.S
 	)
-set(STDIO_H
-    /usr/include/newlib
-    )
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${LD_SCRIPT}")
 add_executable(bm ${PROJECT_SOURCES})
-target_include_directories(bm PUBLIC include vendor_include ${STDIO_H})
+target_include_directories(bm PUBLIC include vendor_include)
 target_link_libraries(bm gcc)
 set_target_properties(bm PROPERTIES LINK_DEPENDS ${LD_SCRIPT})
 add_custom_target(bm.bin ALL DEPENDS bm)

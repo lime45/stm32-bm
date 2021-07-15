@@ -2,8 +2,6 @@
 #define _VVC_GLOBAL_H
 #define VVC_F0
 
-#include <stdio.h>
-
 // Core includes.
 #ifdef VVC_F0
 
