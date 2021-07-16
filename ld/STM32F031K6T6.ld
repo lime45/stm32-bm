@@ -8,7 +8,7 @@ _estack = 0x20001000;
 /* (The linker will generate an error if there is
  * less than this much RAM leftover.) */
 /* (1KB) */
-_Min_Leftover_RAM = 0x400;
+_Min_Leftover_RAM = 0x200;
 MEMORY
 {
   FLASH ( rx )      : ORIGIN = 0x08000000, LENGTH = 32K

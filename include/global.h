@@ -3,6 +3,9 @@
 #define VVC_F0
 
 // Core includes.
+#ifndef VVC_F0
+#define VVC_F0 1
+#endif
 #ifdef VVC_F0
 
   #include "stm32f0xx.h"

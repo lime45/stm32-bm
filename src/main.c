@@ -77,6 +77,7 @@ int main(void)
     // uint32_t gpiob_input = GPIOB->IDR;
     GPIOB->ODR |= (1 << LED_PIN);
     while (1) {
+        GPIOB->ODR ^= (1 << LED_PIN);
     }
 }
 
